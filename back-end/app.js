@@ -9,7 +9,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/rental-car/stuff', (req, res, next) => {
+app.use('/rental-car/cars', (req, res, next) => {
    const stuff = [
      {
        _id: 'oeihfzeoi',
@@ -29,5 +29,7 @@ app.use('/rental-car/stuff', (req, res, next) => {
      },
    ];
    res.status(200).json(stuff);
+   let i = 1
+   console.log("I've been triggered")
  });
 module.exports = app;
