@@ -1,6 +1,22 @@
 const express = require('express');
 
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser')
 const app = express();
+const Car = require("./models/Car")
+
+const connections = require('./connections')
+
+
+mongoose.connect(`mongodb+srv://${connections.userName}:${connections.securedPassword}@sandbox.btv1g.mongodb.net/?retryWrites=true&w=majority`,
+  { useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: "rental-car"
+  })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
+
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -8,6 +24,9 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
 });
+app.use(bodyParser.json())
+
+
 
 app.use('/rental-car/cars', (req, res, next) => {
    const stuff = [
@@ -32,4 +51,16 @@ app.use('/rental-car/cars', (req, res, next) => {
    let i = 1
    console.log("I've been triggered")
  });
+
+ app.post('/rental-car/car', (req, res, next) => {
+  // delete req.body_id;
+  console.log(req.body)
+  const car = new Car({
+  ...req.body
+  });
+  car.save()
+  .then(() => res.status(201).json({message: "Car saved"}))
+  .catch( error => res.status(400).json({error}))
+});
+
 module.exports = app;
