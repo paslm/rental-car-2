@@ -11,16 +11,15 @@ import { Car } from './models/cars';
 export class AppComponent implements OnInit {
   title = 'Hello World';
    carList = this.httpService.allCars
-
-  constructor(private http: HttpClient, private httpService: HttpService){
-    
+   
+   constructor(private http: HttpClient, private httpService: HttpService){
+     
   }
-
+  
   ngOnInit(): void {
     //LESS OP: Reviwe ngOnInit role in Angular
-    //Fetch Product
     this.httpService.fetchAllCars();
-    console.log("Below is carlist")
-    console.log(this.carList)
+    this.httpService.fetchOneCar();
+    //Fetch Product
   }
 }
