@@ -16,9 +16,10 @@ export class HttpService {
 
     }
 
-    backEndUrl = "http://localhost:3000/rental-car/cars";
+    backEndUrl = "http://localhost:3000/rental-car/";
     allCars: Car[] = [];
     
+    //GET ALL CARS
     fetchAllCars() {
         this.http.get<{[key:string]: Car}>(this.backEndUrl)
         .pipe(map((res ) => {
@@ -32,10 +33,16 @@ export class HttpService {
         }))
         .subscribe(
             (cars) => {
-                console.log(cars);
                 this.allCars = cars;
             }
-        )
-    }
+            )
+        }
+        
+        //GET ALL CAR
+    fetchOneCar(){
+        this.http.get(this.backEndUrl + '632b617ce9b09da6f0540d5d')
+        .subscribe ((car) => console.log(car))
+    } 
 
+    
 }   
