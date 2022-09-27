@@ -42,6 +42,7 @@ export class HttpService {
     fetchOneCar(){
         this.http.get(this.backEndUrl + '632b617ce9b09da6f0540d5d')
         .subscribe ((car) => console.log(car))
+        
     } 
 
     
