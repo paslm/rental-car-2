@@ -7,6 +7,7 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { PromoComponent } from './promo/promo.component';
+import { AllCarsSectionComponent } from './all-cars-section/all-cars-section.component';
 
 
 
@@ -17,6 +18,7 @@ import { PromoComponent } from './promo/promo.component';
     MainNavbarComponent,
     HeroSectionComponent,
     PromoComponent,
+    AllCarsSectionComponent,
   ],
   imports: [
     BrowserModule,

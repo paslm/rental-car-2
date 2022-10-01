@@ -25,23 +25,7 @@ export class HttpService {
     justAndId: string = '632b617ce9b09da6f0540d5d';
 
     //GET ALL CARS
-    fetchAllCars() {
-        this.http.get<{[key:string]: Car}>(this.backEndUrl)
-        .pipe(map((res ) => {
-            const cars = [];
-            for(const key in res){
-                if(res.hasOwnProperty(key)) {
-                    this.allCars.push({...res[key], _id: key})
-                }
-            }
-            return this.allCars;
-        }))
-        .subscribe(
-            (cars) => {
-                this.allCars = cars;
-            }
-            )
-        }
+    fetchAllCars() {return this.http.get<{[key:string]: Car}>(this.backEndUrl)}
         
         // GET 1 CAR
         fetchOneCar(){
