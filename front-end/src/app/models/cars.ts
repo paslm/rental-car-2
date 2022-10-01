@@ -1,6 +1,7 @@
 export interface Car {
-    id?: string,
-    title: string,
-    description: string,
-    price: BigInt
+    _id: string,
+    name: string,
+    ppday: BigInt
+    picpath: string,
+    availableOrNot: boolean
 } 
