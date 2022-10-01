@@ -11,15 +11,13 @@ import { HttpService } from '../http-services/http-service.service';
 export class CarsComponent implements OnInit {
 
   
-  printConsole() {
-    console.log("hello")
-  }
+
   constructor( private httpService:HttpService) { }
 
   ngOnInit(): void {
     // this.httpService.fetcHttpServicehCars()
     // this.fetchACar()
-    this.printConsole()
+    
   }
 
 }
