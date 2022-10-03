@@ -7,7 +7,7 @@ import { catchError, retry, map } from 'rxjs';
 @Component({
   selector: 'app-all-cars-section',
   templateUrl: './all-cars-section.component.html',
-  styleUrls: ['./all-cars-section.component.scss']
+  styleUrls: ['./all-cars-section.component.css']
 })
 export class AllCarsSectionComponent implements OnInit {
 
