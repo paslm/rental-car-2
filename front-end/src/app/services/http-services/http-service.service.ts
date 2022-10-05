@@ -4,8 +4,8 @@ import { catchError, retry, map } from 'rxjs/operators';
 
 
 import { Injectable } from "@angular/core";
-import { Car } from "../models/cars";
-import { CarsComponent } from "../cars/cars.component";
+import { Car } from "../../models/cars";
+import { CarsComponent } from "../../cars/cars.component";
 @Injectable({
     providedIn:"root",
 })

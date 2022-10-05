@@ -8,7 +8,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { PromoComponent } from './promo/promo.component';
 import { AllCarsSectionComponent } from './all-cars-section/all-cars-section.component';
-
+import { AuthModule } from '@auth0/auth0-angular';
+import { AuthButtonComponent } from './services/auth-button.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -19,11 +21,18 @@ import { AllCarsSectionComponent } from './all-cars-section/all-cars-section.com
     HeroSectionComponent,
     PromoComponent,
     AllCarsSectionComponent,
+    AuthButtonComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
+     // Import the module into the application, with configuration
+     AuthModule.forRoot({
+      domain: 'dev-i15iafir.us.auth0.com',
+      clientId: 'AScAPG8JPk5QWpQQlCfD1HRcy6Vz88gx'
+    }),
+     AppRoutingModule,
   ],
   providers: [HeroSectionComponent],
   bootstrap: [AppComponent]

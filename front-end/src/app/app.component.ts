@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
-import { HttpService } from './http-services/http-service.service';
+import { HttpService } from './services/http-services/http-service.service';
 import { Car } from './models/cars';
 import { Title, Meta } from '@angular/platform-browser';
 import { HeroSectionComponent } from './hero-section/hero-section.component';

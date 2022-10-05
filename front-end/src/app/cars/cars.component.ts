@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../models/cars';
 import { Form } from '@angular/forms';
-import { HttpService } from '../http-services/http-service.service';
+import { HttpService } from '../services/http-services/http-service.service';
 
 @Component({
   selector: 'app-cars',
