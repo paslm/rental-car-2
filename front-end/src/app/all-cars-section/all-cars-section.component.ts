@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpService } from '../http-services/http-service.service';
+import { HttpService } from '../services/http-services/http-service.service';
 import { Car } from '../models/cars';
 import { catchError, retry, map } from 'rxjs';
 
