@@ -7,16 +7,12 @@ import { AppComponent } from './app.component';
 // import { ExternalApiComponent } from 'src/app/pages/external-api/external-api.component';
 
 import { AuthGuard } from '@auth0/auth0-angular';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: HomeComponent,
-  //   pathMatch: 'full',
-  // },
   {
     path: '',
-    component: AppComponent,
+    component: HomePageComponent,
     canActivate: [AuthGuard],
   }
   // {
