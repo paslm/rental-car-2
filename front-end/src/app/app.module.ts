@@ -11,6 +11,16 @@ import { AllCarsSectionComponent } from './all-cars-section/all-cars-section.com
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthButtonComponent } from './services/auth-button.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AboutSectionComponent } from './about-section/about-section.component';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { Routes } from '@angular/router';
+
+const appRoutes : Routes = [
+  {path: '', component: HeroSectionComponent},
+  {path: 'about-section', component: AboutSectionComponent},
+  {path: 'contact-section', component: ContactSectionComponent}
+];
+
 
 
 @NgModule({
@@ -21,7 +31,9 @@ import { AppRoutingModule } from './app-routing.module';
     HeroSectionComponent,
     PromoComponent,
     AllCarsSectionComponent,
-    AuthButtonComponent
+    AuthButtonComponent,
+    AboutSectionComponent,
+    ContactSectionComponent
   ],
   imports: [
     BrowserModule,

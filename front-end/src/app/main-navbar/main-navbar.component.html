@@ -5,9 +5,9 @@
         </div>
 
         <ul>
-            <li><a href="">Accueil</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a routerLink="/">Accueil</a></li>
+            <li><a routerLink="/about-section">À propos</a></li>
+            <li><a routerLink="/contact-section">Contact</a></li>
              
         </ul>
         
@@ -17,7 +17,7 @@
 
              <ng-container *ngIf="auth.isAuthenticated$ | async;">
                 <button class="btn" (click)="auth.logout({ returnTo: document.location.origin })">
-                    Deconnexion
+                    Deconnexion &#8594;
                 </button>
               </ng-container>
         </li>  
