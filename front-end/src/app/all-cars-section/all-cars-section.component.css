@@ -1,4 +1,4 @@
-/* Card des voitures */
+/* Card des voitures  */
 .header2{
 
     background: white;
@@ -16,17 +16,28 @@
  
 }
 
+.header2 h2{
+
+  display: grid;
+  justify-content: center;
+  color: rgb(22, 22, 22);
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 80px;
+  letter-spacing: 2px;
+  font-family: 'Lato', sans-serif;
+}
+
 
 
 .card {
     
-    max-width: 300px;
-    padding: 25px;
-    padding-top: 50px;
-    margin: auto;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-  }
+  max-width: 300px;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
   
 
   .card h1 { 
@@ -57,6 +68,9 @@
     font-family: 'Lato', sans-serif;
   }
   
+  
   .card button:hover {
     opacity: 0.7;
   }
+
+ 

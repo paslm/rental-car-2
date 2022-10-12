@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const carRoutes = require('./routes/Car');
-
-const connections = require('./connections');
+const connections = require('./connections')
 
 
 mongoose.connect(`mongodb+srv://${connections.userName}:${connections.securedPassword}@sandbox.btv1g.mongodb.net/?retryWrites=true&w=majority`,
@@ -13,7 +12,7 @@ mongoose.connect(`mongodb+srv://${connections.userName}:${connections.securedPas
   dbName: "rental-car"
 })
 .then(() => console.log('Connexion à MongoDB réussie !'))
-.catch(() => console.log('Connexion à MongoDB échouée !'));
+.catch((error) => console.log(error));
 
 
 const app = express();

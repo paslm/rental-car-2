@@ -1,5 +1,6 @@
 /* Barre de navigation */
 
+
 .navbar{
 
     display: flex;
@@ -7,7 +8,7 @@
     justify-content: space-around;
     min-height: 8vh;
     background-color: rgb(22, 22, 22);
-    padding: 14px;
+    padding: 0 14px;
     font-family: 'Lato', sans-serif;
  
 }
@@ -17,8 +18,9 @@
   
     background: rgb(57, 37, 97);
     color: rgb(244, 245, 237);
-    padding: 8px 15px;
+    padding: 8px 20px;
     margin: 20px 0;
+    border: 0;
     border-radius: 10px;
     font-family: 'Lato', sans-serif;
     transition: 'background 0.5s';
@@ -70,3 +72,4 @@ nav a{
     font-size: 13px;
 
 }
+
