@@ -5,11 +5,11 @@
         <div class="row">
             
             <div *ngFor="let car of allCars | slice:0:3;" class="card">
-                <img [src]="car.picpath" [alt]="car.name" style="width:110%">
+                <img [src]="car.picpath" [alt]="car.name" style="width:110%" >
                 <h1>{{car.name}}</h1>
-                <p class="price">{{car.ppday}}</p>
+                <p class="price">{{car.ppday}}$/jour</p>
                 
-                <p><button>En savoir plus</button></p>
+                <p><button>Réserver</button></p>
             </div>
         </div>
     </div>    

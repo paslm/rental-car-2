@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 
 import { AuthGuard } from '@auth0/auth0-angular';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AboutSectionComponent } from './about-section/about-section.component';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { ClientSectionComponent } from './client-section/client-section.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePageComponent,
-    canActivate: [AuthGuard],
-  }
+  {path: '', component: HomePageComponent, canActivate: [AuthGuard]},
+  {path: 'about-section', component: AboutSectionComponent},
+  {path: 'contact-section', component: ContactSectionComponent},
+  {path: 'client-section', component: ClientSectionComponent}
   // {
   //   path: 'external-api',
   //   component: ExternalApiComponent,

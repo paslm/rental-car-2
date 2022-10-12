@@ -15,6 +15,8 @@ import { AboutSectionComponent } from './about-section/about-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AdminSectionComponent } from './admin-section/admin-section.component';
+import { ClientSectionComponent } from './client-section/client-section.component';
 
 const appRoutes : Routes = [
   {path: '', component: HeroSectionComponent},
@@ -35,7 +37,9 @@ const appRoutes : Routes = [
     AuthButtonComponent,
     AboutSectionComponent,
     ContactSectionComponent,
-    HomePageComponent
+    HomePageComponent,
+    AdminSectionComponent,
+    ClientSectionComponent
   ],
   imports: [
     BrowserModule,
