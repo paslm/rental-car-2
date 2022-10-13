@@ -14,11 +14,11 @@ import { ClientSectionComponent } from './client-section/client-section.componen
 import { GanttChartComponent } from './gantt-chart/gantt-chart.component';
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent, canActivate: [AuthGuard]},
+  {path: '', component: HomePageComponent},
   {path: 'about-section', component: AboutSectionComponent},
   {path: 'contact-section', component: ContactSectionComponent},
-  {path: 'client-section', component: ClientSectionComponent},
-  {path: 'gantt-chart', component: GanttChartComponent}
+  {path: 'client-section', component: ClientSectionComponent, canActivate: [AuthGuard]},
+  {path: 'gantt-chart', component: GanttChartComponent, canActivate: [AuthGuard]}
   // {
   //   path: 'external-api',
   //   component: ExternalApiComponent,
