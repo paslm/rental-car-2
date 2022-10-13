@@ -17,11 +17,15 @@ import { Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { ClientSectionComponent } from './client-section/client-section.component';
-
+import { GanttChartComponent } from './gantt-chart/gantt-chart.component';
+import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 const appRoutes : Routes = [
   {path: '', component: HeroSectionComponent},
   {path: 'about-section', component: AboutSectionComponent},
-  {path: 'contact-section', component: ContactSectionComponent}
+  {path: 'contact-section', component: ContactSectionComponent},
+  {path: 'client-section', component: ClientSectionComponent},
+  {path: 'gantt-chart', component: GanttChartComponent}
+
 ];
 
 
@@ -39,12 +43,14 @@ const appRoutes : Routes = [
     ContactSectionComponent,
     HomePageComponent,
     AdminSectionComponent,
-    ClientSectionComponent
+    ClientSectionComponent,
+    GanttChartComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
+    GanttModule,
      // Import the module into the application, with configuration
      AuthModule.forRoot({
       domain: 'dev-i15iafir.us.auth0.com',
