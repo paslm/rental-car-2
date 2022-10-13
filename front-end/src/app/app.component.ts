@@ -5,6 +5,8 @@ import { HttpService } from './services/http-services/http-service.service';
 import { Car } from './models/cars';
 import { Title, Meta } from '@angular/platform-browser';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
+
+
 import { projectNewData } from './data';
 
 @Component({
@@ -27,7 +29,7 @@ export class AppComponent implements OnInit {
     // console.log(this.heroSection.heroBannerCar)
   }
   
-  constructor(private http: HttpClient, private httpService: HttpService, private titleService: Title, private metaService: Meta, private heroSection: HeroSectionComponent){
+  constructor(private http: HttpClient, private httpService: HttpService, private titleService: Title, private metaService: Meta){
     
     this.testLog()
     
