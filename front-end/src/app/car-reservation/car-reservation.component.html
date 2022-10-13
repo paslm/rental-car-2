@@ -1,1 +1,34 @@
-<h1>What's up son, this shit works</h1>
+<div>
+    <div class="e-card">
+        <img src="../images/audi_sedan.jpg">
+            <div class="e-card-title">Audi Sedan</div>
+        
+        <div class="e-card-content">
+          <h2>Veuillez choisir votre période de location</h2>
+          <ejs-daterangepicker #date placeholder="select a date range" 
+          [value]="upToDateValue" (change)="valueChange($event)"
+         
+          format="dd-MMM-yy"
+          class="position"
+          >
+          <!-- set min-max range in calendar -->
+          <!-- 
+            [min]="minDate"
+            [max]="maxDate" 
+          -->
+      
+          <!-- set Day span in calendar -->
+          <!-- 
+            [minDays]="minDayValue"
+            [maxDays]="maxDayValue" 
+          -->
+          
+          <!-- set custom range views -->
+          <!-- start="Year"
+          depth="Year" -->
+          <!-- <button class="btn">confirmer</button> -->
+        </ejs-daterangepicker>
+            <p class="price-counter">price counter placeholder</p>
+        </div>
+</div>
+</div>

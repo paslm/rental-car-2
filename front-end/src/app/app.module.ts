@@ -15,18 +15,17 @@ import { AboutSectionComponent } from './about-section/about-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
+
+import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { SplitterModule, DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
+import { CarReservationComponent } from './car-reservation/car-reservation.component';
+
+
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { ClientSectionComponent } from './client-section/client-section.component';
 import { GanttChartComponent } from './gantt-chart/gantt-chart.component';
 import { GanttModule } from '@syncfusion/ej2-angular-gantt';
-const appRoutes : Routes = [
-  {path: '', component: HeroSectionComponent},
-  {path: 'about-section', component: AboutSectionComponent},
-  {path: 'contact-section', component: ContactSectionComponent},
-  {path: 'client-section', component: ClientSectionComponent},
-  {path: 'gantt-chart', component: GanttChartComponent}
 
-];
 
 
 
@@ -42,9 +41,12 @@ const appRoutes : Routes = [
     AboutSectionComponent,
     ContactSectionComponent,
     HomePageComponent,
+    CarReservationComponent
+
     AdminSectionComponent,
     ClientSectionComponent,
     GanttChartComponent
+
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,8 @@ const appRoutes : Routes = [
       clientId: 'AScAPG8JPk5QWpQQlCfD1HRcy6Vz88gx'
     }),
      AppRoutingModule,
+     CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, 
+     DateTimePickerModule, SplitterModule, DashboardLayoutModule,
   ],
   providers: [HeroSectionComponent],
   bootstrap: [AppComponent]
