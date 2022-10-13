@@ -62,7 +62,7 @@
 
 }
 
-.header3 .row .image .btn:hover{
+.header3 .row .btn:hover{
     background: rgb(255, 255, 255);
     color: rgb(19, 19, 19);
 }

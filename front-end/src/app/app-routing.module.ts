@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 import { AuthGuard } from '@auth0/auth0-angular';
 import { HomePageComponent } from './home-page/home-page.component';
+
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
 
 const routes: Routes = [
@@ -17,6 +18,18 @@ const routes: Routes = [
     component: HomePageComponent,
     canActivate: [AuthGuard],
   }
+
+import { AboutSectionComponent } from './about-section/about-section.component';
+import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { ClientSectionComponent } from './client-section/client-section.component';
+import { GanttChartComponent } from './gantt-chart/gantt-chart.component';
+
+const routes: Routes = [
+  {path: '', component: HomePageComponent, canActivate: [AuthGuard]},
+  {path: 'about-section', component: AboutSectionComponent},
+  {path: 'contact-section', component: ContactSectionComponent},
+  {path: 'client-section', component: ClientSectionComponent},
+  {path: 'gantt-chart', component: GanttChartComponent}
 
   // {
   //   path: 'external-api',
