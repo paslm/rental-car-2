@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Car } from '../models/cars';
 import { Form } from '@angular/forms';
 import { HttpService } from '../services/http-services/http-service.service';
