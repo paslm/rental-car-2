@@ -17,6 +17,8 @@ import { Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { ClientSectionComponent } from './client-section/client-section.component';
+import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { SplitterModule, DashboardLayoutModule } from '@syncfusion/ej2-angular-layouts';
 
 const appRoutes : Routes = [
   {path: '', component: HeroSectionComponent},
@@ -51,6 +53,13 @@ const appRoutes : Routes = [
       clientId: 'AScAPG8JPk5QWpQQlCfD1HRcy6Vz88gx'
     }),
      AppRoutingModule,
+     CalendarModule, 
+     DatePickerModule, 
+     TimePickerModule, 
+     DateRangePickerModule, 
+     DateTimePickerModule, 
+     SplitterModule, 
+     DashboardLayoutModule
   ],
   providers: [HeroSectionComponent],
   bootstrap: [AppComponent]
