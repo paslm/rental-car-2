@@ -28,68 +28,15 @@ export class HttpService {
     fetchAllCars() {return this.http.get<{[key:string]: Car}>(this.backEndUrl)}
         
         // GET 1 CAR
-        fetchOneCar(){
+     fetchOneCar(){
             return this.http.get<Car>(this.backEndUrl + this.justAndId)
         } 
+
+    fetchReservations(){
+       
+    }
     
 
-        //  fetchingCar(): Observable<object> {
-        //      let possibleCar: Car | any;
-        //      let placeHolderValue: any;
-        //      new Observable((observer) => {
-        //         possibleCar =   this.http.get<Car>(this.backEndUrl + this.justAndId)
-        //        if(possibleCar) {
-        //          placeHolderValue = observer.next(possibleCar);
-        //          return placeHolderValue
-        //        }
-        //        else {
-        //         placeHolderValue = observer.error("There's currently no car")
-        //        }
-        //     })
-            
-        //     return placeHolderValue
-        //  }
-
-        // fetchCar = new Observable((observer) => {
-        //    let possibleCar
-        //    let car: Car;
-        //    possibleCar =  this.http.get<Car>(this.backEndUrl + this.justAndId)
-           
-        //    if(possibleCar && typeof possibleCar === typeof car ){
-        //         observer.next(possibleCar)
-        //    }
-        //    else {
-        //     console.log( observer.error(Error))
-        //    }
-            
-        // })
-
-        //  fetchOneCar(){
-        //     this.fetchCar.subscribe({
-        //         next(possibleCar) {
-        //             console.log(possibleCar)
-        //         }
-        //     })
-           
-        //  }
-
-        
-        // //GET 1 CAR
-        //  fetchOneCar(id: string, componentCar: any| Car): any {
-        //     new Observable((observer) => {
-        //         let returnCar: any | Car;
-        //       returnCar =  this.http.get<Car>(this.backEndUrl + id)
-        //         .subscribe({
-        //             next(returnCar) {
-        //                 console.log(returnCar)
-        //                 componentCar = returnCar
-        //             },
-        //             error(msg){
-        //                 console.log(msg)
-        //             }
-        //         })
-        //         return componentCar
-        //     })
-        // }
+ 
 
     }

@@ -1,0 +1,12 @@
+
+h3 {
+    color: rgb(22, 22, 22);
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    display: grid;
+    font-family: 'Lato', sans-serif; 
+    place-items: center;
+
+}
