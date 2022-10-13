@@ -8,13 +8,16 @@ import { AppComponent } from './app.component';
 
 import { AuthGuard } from '@auth0/auth0-angular';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CarReservationComponent } from './car-reservation/car-reservation.component';
 
 const routes: Routes = [
+{path: 'reservation', component: CarReservationComponent},
   {
     path: '',
     component: HomePageComponent,
     canActivate: [AuthGuard],
   }
+
   // {
   //   path: 'external-api',
   //   component: ExternalApiComponent,
