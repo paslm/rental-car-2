@@ -21,6 +21,8 @@ import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { ClientSectionComponent } from './client-section/client-section.component';
 import { GanttChartComponent } from './gantt-chart/gantt-chart.component';
 import { GanttModule } from '@syncfusion/ej2-angular-gantt';
+import { CarReservationComponent } from './car-reservation/car-reservation.component';
+import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 
 
@@ -37,7 +39,7 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt';
     AboutSectionComponent,
     ContactSectionComponent,
     HomePageComponent,
-  
+    CarReservationComponent,
     AdminSectionComponent,
     ClientSectionComponent,
     GanttChartComponent
@@ -54,6 +56,7 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt';
       clientId: 'AScAPG8JPk5QWpQQlCfD1HRcy6Vz88gx'
     }),
      AppRoutingModule,
+     CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
      
   ],
   providers: [HeroSectionComponent],

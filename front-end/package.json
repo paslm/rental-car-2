@@ -22,18 +22,14 @@
     "@auth0/auth0-angular": "^1.11.0",
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
-
     "@syncfusion/ej2-angular-calendars": "^20.3.49",
-    "@syncfusion/ej2-angular-layouts": "^20.3.48",
-  
-
     "@syncfusion/ej2-angular-gantt": "^20.3.49",
-
+    "@syncfusion/ej2-angular-layouts": "^20.3.48",
+    "@syncfusion/ej2-material-theme": "~20.3.49",
     "bootstrap": "^5.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "@syncfusion/ej2-material-theme": "~20.3.49"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.4",
