@@ -1,6 +1,6 @@
 
 
-button {
+/* button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -28,4 +28,19 @@ button {
     display: grid;
     font-family: 'Lato', sans-serif; 
     place-items: center;
+  } */
+
+  .full-page {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
   }
+/* 
+  .center-page {
+
+
+
+  } */
