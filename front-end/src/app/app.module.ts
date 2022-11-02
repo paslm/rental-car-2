@@ -20,11 +20,18 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { ClientSectionComponent } from './client-section/client-section.component';
 import { GanttChartComponent } from './gantt-chart/gantt-chart.component';
-import { GanttModule } from '@syncfusion/ej2-angular-gantt';
+
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
-import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button'
+import {MatCardModule} from '@angular/material/card'
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -42,21 +49,30 @@ import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModu
     CarReservationComponent,
     AdminSectionComponent,
     ClientSectionComponent,
-    GanttChartComponent
+    GanttChartComponent,
+  
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    GanttModule,
      // Import the module into the application, with configuration
      AuthModule.forRoot({
       domain: 'dev-i15iafir.us.auth0.com',
       clientId: 'AScAPG8JPk5QWpQQlCfD1HRcy6Vz88gx'
     }),
      AppRoutingModule,
-     CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
+     BrowserAnimationsModule,
+     BrowserAnimationsModule,
+     FormsModule,
+     ReactiveFormsModule,
+     MatButtonModule,
+     MatCardModule,
+     MatDatepickerModule,
+     MatFormFieldModule,
+     MatNativeDateModule,
+     HttpClientModule
      
   ],
   providers: [HeroSectionComponent],
