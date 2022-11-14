@@ -27,12 +27,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card'
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';      
+import {MatNativeDateModule} from '@angular/material/core';
+import { ReservationDialogComponent } from './reservation-dialog/reservation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AdminSectionComponent,
     ClientSectionComponent,
     GanttChartComponent,
+    ReservationDialogComponent,
   
 
   ],
@@ -70,6 +72,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
      MatButtonModule,
      MatCardModule,
      MatDatepickerModule,
+     MatDialogModule,
      MatFormFieldModule,
      MatNativeDateModule,
      HttpClientModule

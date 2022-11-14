@@ -17,10 +17,10 @@ import { CarReservationComponent } from './car-reservation/car-reservation.compo
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
+  {path: 'reservation/:id', component: CarReservationComponent, canActivate: [AuthGuard]},
   {path: 'about-section', component: AboutSectionComponent},
   {path: 'contact-section', component: ContactSectionComponent},
   {path: 'client-section', component: ClientSectionComponent,  canActivate:[AuthGuard]},
-  {path: 'reservation', component: CarReservationComponent, canActivate: [AuthGuard]},
   {path: 'gantt-chart', component: GanttChartComponent, canActivate: [AuthGuard]}
   // {
   //   path: 'external-api',
@@ -30,7 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
+  imports: [RouterModule.forRoot(routes, { enableTracing: true }),
     CommonModule
   ],
   exports: [RouterModule],
