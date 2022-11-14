@@ -9,10 +9,12 @@
                      <mat-label>Enter a date range</mat-label>
                      <mat-date-range-input [rangePicker]="picker">
                      <input matStartDate placeholder="Start date"
+                        [(ngModel)]="start"
                          (dateChange)="dateParser('change', $event, parsedStart)"
                      >
                      
                      <input matEndDate placeholder="End date"
+                     [(ngModel)]="end"
                      (dateChange)="dateParser('change', $event, parsedEnd)"
                      >
                      </mat-date-range-input>
@@ -24,7 +26,7 @@
          
              </mat-card-content>
              <mat-card-content align="center">
-                 <button mat-raised-button color="primary" >Primary</button>
+                 <button mat-raised-button color="primary" (click)="openDialog()" >Confirm</button>
              </mat-card-content>
         </mat-card>
         

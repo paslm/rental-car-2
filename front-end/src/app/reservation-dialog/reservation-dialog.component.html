@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+
+   Start Time: {{data.reservation_start | date}}
+   End Time:    {{data.reservation_end | date }}
+   Duration: {{data.duration  }}
+   car_id: {{data.car_id}}
+   Total: {{priceOfRes()}}
+  <!-- </ng-template> -->
+  <mat-form-field appearance="fill">
+    <!-- <mat-label>Favorite Animal</mat-label> -->
+    <!-- <input matInput > -->
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button>Ok</button>
+</div>
