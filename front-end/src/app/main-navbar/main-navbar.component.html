@@ -18,11 +18,14 @@
             <!-- <a href="" class="btn"> Deconnexion →</a>
              -->
 
-             <ng-container *ngIf="auth.isAuthenticated$ | async;">
+             <ng-container *ngIf="auth.isAuthenticated$ | async; else elseBlock">
                 <button class="btn" (click)="auth.logout({ returnTo: document.location.origin })">
                     Deconnexion &#8594;
                 </button>
-              </ng-container>
+            </ng-container>
+            <ng-template #elseBlock>
+               <button class="btn" (click)="login()">Connexion</button>>
+            </ng-template>
         </li>  
     </div>
     

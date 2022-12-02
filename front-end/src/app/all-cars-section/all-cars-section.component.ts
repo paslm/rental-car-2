@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpService } from '../services/http-services/http-service.service';
 import { Car } from '../models/cars';
-import { catchError, retry, map } from 'rxjs';
+import { catchError, retry, map, take, toArray } from 'rxjs';
 
 @Component({
   selector: 'app-all-cars-section',
@@ -11,32 +11,27 @@ import { catchError, retry, map } from 'rxjs';
 })
 export class AllCarsSectionComponent implements OnInit {
 
-  allCars: Car[] = [];
+  allCars = [];
 
-  subscribingtoFetchAllCars() {
-    this.httpService.fetchAllCars()
-      .pipe(map((res ) => {
-        const cars = [];
-        for(const key in res){
-            if(res.hasOwnProperty(key)) {
-                this.allCars.push({...res[key], _id: key})
-            }
-        }
-        return this.allCars;
-    }))
-    .subscribe(
-        (cars) => {
-            this.allCars = cars;
-        }
-        )
-    
+
+  
+  
+  callFetchCars() {
+   this.httpService.fetchAllCars()
+     .subscribe( (data) => {
+       this.allCars = data
+       return this.allCars
+     })
+     // return this.allCars
   }
+
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
-    this.subscribingtoFetchAllCars();
+    this.callFetchCars()
     this.allCars;
+    // console.log(this.allCars)
   }
 
 }

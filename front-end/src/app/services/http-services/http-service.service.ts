@@ -1,18 +1,18 @@
 import { HttpClient } from "@angular/common/http";
 import { Observable, Observer, throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
-
-
+import { ErrorHandler } from "@angular/core";
 import { Injectable } from "@angular/core";
 import { Car } from "../../models/cars";
-import { CarsComponent } from "../../cars/cars.component";
+import { Reservation } from "src/app/models/reservations";
+
 @Injectable({
     providedIn:"root",
 })
 
 export class HttpService {
     // LESS OP: Review Constructor Role in Angular classes/TypeScript
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private handleError: ErrorHandler) {
 
 
     }
@@ -25,18 +25,28 @@ export class HttpService {
     justAndId: string = '632b617ce9b09da6f0540d5d';
 
     //GET ALL CARS
-    fetchAllCars() {return this.http.get<{[key:string]: Car}>(this.backEndUrl)}
+    fetchAllCars() {return this.http.get<Car[]>(this.backEndUrl)}
         
         // GET 1 CAR
      fetchOneCar(){
             return this.http.get<Car>(this.backEndUrl + this.justAndId)
-        } 
+         } 
 
     fetchReservations(){
-       
     }
+    '/reservation/:car_id/:reservation'
+
+    createReservation(reservation: Reservation) {
+        return this.http.post<Reservation>(this.backEndUrl + `reservation`, reservation)
+            .pipe(
+                catchError(
+                    err => {
+                        console.log(err)
+                        throw 'error in POST RES. Details:' + err
+                    }
+                )
+            )
     
-
- 
-
     }
+
+}
