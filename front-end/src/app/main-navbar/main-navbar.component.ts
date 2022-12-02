@@ -10,6 +10,10 @@ import { DOCUMENT } from '@angular/common';
 export class MainNavbarComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
+
+  login() {
+    this.auth.loginWithRedirect();
+  }
   ngOnInit(): void {
   }
 
