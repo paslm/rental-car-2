@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
 const reservationSchema = mongoose.Schema({
-    car_id: {type: String, required: true},
-    // user_id: {type: ObjectId, required: true},
-    start_time: {type: Date, required: true},
-    end_time: {type: Date, required: true}
+        car_id: {type: mongoose.Types.ObjectId, ref:"Car", required: true},
+        user_id:{ type: String, required: true},
+        start_time: {type: Date, required: true},
+        end_time: {type: Date, required: true},
+        resPrice: {type: Number, required: true},
+        duration: {type: Number, required: true}
 },
 {
     collection: 'reservations'
@@ -25,4 +27,4 @@ const reservationSchema = mongoose.Schema({
     }
 )
 
-module.exports = mongoose.model('reservation', reservationSchema);
+module.exports = mongoose.model('Reservation', reservationSchema);

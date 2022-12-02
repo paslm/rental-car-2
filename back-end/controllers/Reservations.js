@@ -1,5 +1,7 @@
 const Reservation = require('../models/Reservation')
 const Car = require('../models/Car')
+const mongoose = require('mongoose')
+const toId = mongoose.Types.ObjectId
 
 
 exports.getAllReservations = () => {
@@ -10,18 +12,27 @@ exports.getAllReservations = () => {
 }
 
 exports.createReservation = (req, res, next) => {
-    car = Car.findOne({_id: req.params.id})
+    const car = Car.findById(req.body.car_id)
+    const carPrice = car.ppday * req.body.duration
+    const carId = toId(req.body.car_id)
+
+    // Load price variable here
+
 
     const reservation = new Reservation({
-        car_id: car.id,
+        car_id: carId,
+        user_id: req.body.user_id,
         start_time: req.body.start_time,
-        end_time: req.body.end_time
+        end_time: req.body.end_time,
+        duration: req.body.duration,
+        resPrice: req.body.resPrice
 
       });
 
      
       reservation.save()
-      .then(() => {res.status(201).json({message: 'Reservation saved in DataBase'})})
+      .then((data) => {res.status(201).json({car: data})})
       .catch((error) => { res.status(400).json({   error: error   }); });
-
-}
+    
+      
+}   

@@ -22,7 +22,7 @@ exports.createCar = (req, res, next) => {
 
     car.save()
 
-      .then(() => {res.status(201).json({message: 'Car saved in DataBase'})})
+       .then(() => {res.status(201).json({message: 'Car saved in DataBase'})})
       .catch((error) => { res.status(400).json({   error: error   }); });
 
 }
@@ -53,7 +53,7 @@ exports.updateCar = (req, res, next) => {
 
   )
 
-  ar.updateOne({_id: req.params.id}, car)
+   car.updateOne({_id: req.params.id}, car)
     .then(() => { res.status(201).json({message: `The Car ${car.id} has been safely updated`})})
     .catch((error) => { res.status(400).json({   error: error   }); });
 
