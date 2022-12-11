@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const carRoutes = require('./routes/Car');
 const resRoutes = require('./routes/Reservation')
+const stripeRoutes = require('./routes/Stripe')
 const connections = require('./connections')
 
 
@@ -31,6 +32,7 @@ app.use(bodyParser.json())
 
 app.use('/rental-car', carRoutes);
 app.use('/rental-car', resRoutes)
+app.use('/rental-car', stripeRoutes)
 
 
 
