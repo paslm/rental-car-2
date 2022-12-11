@@ -14,6 +14,8 @@ import { ContactSectionComponent } from './contact-section/contact-section.compo
 import { ClientSectionComponent } from './client-section/client-section.component';
 import { GanttChartComponent } from './gantt-chart/gantt-chart.component';
 import { CarReservationComponent } from './car-reservation/car-reservation.component';
+import { SuccessComponent } from './success/success.component';
+import { CancelledComponent } from './cancelled/cancelled.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path: 'about-section', component: AboutSectionComponent},
   {path: 'contact-section', component: ContactSectionComponent},
   {path: 'client-section', component: ClientSectionComponent,  canActivate:[AuthGuard]},
-  {path: 'gantt-chart', component: GanttChartComponent, canActivate: [AuthGuard]}
+  {path: 'gantt-chart', component: GanttChartComponent, canActivate: [AuthGuard]},
+  {path:"success", component: SuccessComponent},
+  {path:"cancelled", component: CancelledComponent}
   // {
   //   path: 'external-api',
   //   component: ExternalApiComponent,

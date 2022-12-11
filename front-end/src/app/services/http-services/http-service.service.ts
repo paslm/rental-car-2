@@ -34,7 +34,7 @@ export class HttpService {
 
     fetchReservations(){
     }
-    '/reservation/:car_id/:reservation'
+f
 
     createReservation(reservation: Reservation) {
         return this.http.post<Reservation>(this.backEndUrl + `reservation`, reservation)
@@ -47,6 +47,27 @@ export class HttpService {
                 )
             )
     
+    }
+
+
+    checkoutSession(car_price, car_name) {
+
+      let  requiredInfo = {
+        price: car_price,
+        name: car_name,
+        quantity: 1
+
+        }
+        return this.http.post(this.backEndUrl + `create-checkout-session`, requiredInfo)
+        .pipe(
+            catchError(
+                err => {
+                    console.log(err)
+                    throw 'error in POST RES. Details:' + err
+                }
+            )
+        )
+
     }
 
 }

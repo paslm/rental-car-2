@@ -35,6 +35,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';      
 import {MatNativeDateModule} from '@angular/material/core';
 import { ReservationDialogComponent } from './reservation-dialog/reservation-dialog.component';
+import { SuccessComponent } from './success/success.component';
+import { CancelledComponent } from './cancelled/cancelled.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { ReservationDialogComponent } from './reservation-dialog/reservation-dia
     ClientSectionComponent,
     GanttChartComponent,
     ReservationDialogComponent,
+    SuccessComponent,
+    CancelledComponent,
   
 
   ],

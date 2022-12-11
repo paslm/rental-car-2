@@ -26,6 +26,7 @@ export class ReservationDialogComponent implements OnInit {
       car_id: number,
       user_id: string,
       car_price: number
+      car_name: string
     },
     
     public httpService: HttpService
@@ -41,6 +42,7 @@ export class ReservationDialogComponent implements OnInit {
     durationOfRes = this.data.duration
     car_id: any = this.data.car_id
     car_price: number = this.data.car_price
+    car_name: string = this.data.car_name
     username: any
     user_id: string 
  
@@ -73,7 +75,7 @@ export class ReservationDialogComponent implements OnInit {
     
   
     
-    saveReservation(user_id, car_id, start_time, end_time, duration, car_price) {
+    saveReservation(user_id, car_id, start_time, end_time, duration, car_price, car_name) {
 
       let  reservationObject: Reservation = {
         user_id: user_id,
@@ -91,7 +93,11 @@ export class ReservationDialogComponent implements OnInit {
         .subscribe(data => {
           console.log(data)
         })
-  
+
+        this.httpService.checkoutSession(car_price, car_name)
+        .subscribe(data => {
+          console.log(data)
+        })
 
     }
   
