@@ -29,6 +29,7 @@ export class CarReservationComponent implements OnInit {
   parsedStart: any;
   parsedEnd: any;
   price
+  car_name
   
   dateParser(type: string, event: MatDatepickerInputEvent<Date>, miliSecondValue: number) {
     let eventValue
@@ -76,7 +77,8 @@ export class CarReservationComponent implements OnInit {
               reservation_end: this.end,  
               duration: ((Date.parse(this.end) - Date.parse(this.start))/(1000*60*60*24)),
               car_id: this.paramsData,
-              car_price: parseInt(this.price)
+              car_price: parseInt(this.price),
+              car_name: this.car_name
             }
             
           });
@@ -104,6 +106,7 @@ export class CarReservationComponent implements OnInit {
     this.route.queryParams.subscribe(
       params => {
         this.price = params['car_price']
+        this.car_name = params['car_name']
         console.log(params)
         console.log(this.price)
       }
