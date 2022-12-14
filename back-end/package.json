@@ -13,6 +13,7 @@
     "bodyparser-json-error": "^1.0.0",
     "express": "^4.18.1",
     "mongoose": "^6.6.1",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "stripe": "^11.3.0"
   }
 }

@@ -3,9 +3,9 @@ import { DatePipe } from '@angular/common';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
 import { Reservation } from '../models/reservations';
 import { AuthService } from '@auth0/auth0-angular';
-
 import { HttpService } from '../services/http-services/http-service.service';
 import { end } from '@popperjs/core';
+import { ResponseData } from 'src/responseData';
 
 
 @Component({
@@ -75,15 +75,15 @@ export class ReservationDialogComponent implements OnInit {
     
   
     
-    saveReservation(user_id, car_id, start_time, end_time, duration, car_price, car_name) {
-
+    async saveReservation(user_id, car_id, start_time, end_time, duration, car_price, car_name) {
+      let resPrice: number = duration * car_price
       let  reservationObject: Reservation = {
         user_id: user_id,
         car_id: car_id,
         start_time: start_time,
         end_time: end_time,
         duration: duration,
-        resPrice: duration * car_price
+        resPrice: resPrice
 
 
       }
@@ -94,9 +94,10 @@ export class ReservationDialogComponent implements OnInit {
           console.log(data)
         })
 
-        this.httpService.checkoutSession(car_price, car_name)
-        .subscribe(data => {
-          console.log(data)
+        this.httpService.checkoutSession(resPrice, car_name)
+        .subscribe((data: ResponseData) => {
+          window.location.href = data.url
+          // console.log(data)
         })
 
     }
@@ -107,7 +108,6 @@ export class ReservationDialogComponent implements OnInit {
      
     onNoClick(): void {
       this.dialogRef.close();
-    }
   
     
     ngOnInit(): void {

@@ -108,7 +108,7 @@ export class CarReservationComponent implements OnInit {
         this.price = params['car_price']
         this.car_name = params['car_name']
         console.log(params)
-        console.log(this.price)
+
       }
     )
     

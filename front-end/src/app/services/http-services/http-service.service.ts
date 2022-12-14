@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, Observer, throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
 import { ErrorHandler } from "@angular/core";
@@ -34,10 +34,19 @@ export class HttpService {
 
     fetchReservations(){
     }
-f
+
 
     createReservation(reservation: Reservation) {
-        return this.http.post<Reservation>(this.backEndUrl + `reservation`, reservation)
+        const httpOptions = {
+            headers: new HttpHeaders()
+      }
+  
+      httpOptions.headers.append('Access-Control-Allow-Origin', '*');
+      httpOptions.headers.append('Content-Type', 'application/json');
+      httpOptions.headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+
+      
+        return this.http.post<Reservation>(this.backEndUrl + `reservation`, reservation, httpOptions)
             .pipe(
                 catchError(
                     err => {
@@ -58,6 +67,7 @@ f
         quantity: 1
 
         }
+    
         return this.http.post(this.backEndUrl + `create-checkout-session`, requiredInfo)
         .pipe(
             catchError(
