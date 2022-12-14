@@ -5,7 +5,7 @@ const stripe = require('stripe')('sk_test_51MD8xKGItFVq9FbgIs9Fyp4dEa6dHlC9ROpQg
 
 
 
-const YOUR_DOMAIN = 'http://localhost:4200/';
+const YOUR_DOMAIN = 'http://localhost:4200';
 
 router.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
@@ -17,10 +17,10 @@ router.post('/create-checkout-session', async (req, res) => {
         price_data: {
             
           currency: "CAD",
-          unit_amount: req.body.price,
+          unit_amount: req.body.price * 100,
           tax_behavior: "inclusive",
           product_data: {
-              name: `Rental of ${req.body.car_name}`
+              name: `Rental of ${req.body.name}`
               
           }
         },
@@ -33,7 +33,9 @@ router.post('/create-checkout-session', async (req, res) => {
   })
     // .then((data) => {res.status(201).json({message: data.status})})
     // .catch((error) => { res.status(400).json({message: error})})
-    res.redirect(303, session.url);
+    // res.redirect(201, session.url);
+    // res.status(201).redirect(session.url)
+    res.status(201).json({url: session.url}) // <-- this is the changed line
 
 
 });
