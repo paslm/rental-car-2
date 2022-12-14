@@ -109,6 +109,7 @@ export class ReservationDialogComponent implements OnInit {
     onNoClick(): void {
       this.dialogRef.close();
   
+    }
     
     ngOnInit(): void {
       console.log(this.data)
